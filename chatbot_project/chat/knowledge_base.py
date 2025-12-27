@@ -31,7 +31,7 @@ iii) Consider phrases like "call with your coach", "doctor appointment", "consul
 ### 3) Classify as OTHERS
 Classify as OTHERS when:
 
-i) The conversation does not clearly relate to any Twin Health appointment
+i) The conversation does not clearly relate to any Twin Health appointment, but is a general inquiry about Twin Health or a greeting.
 ii) The topic is ambiguous and could be about multiple appointment types
 iii) There is insufficient context to make a confident determination
 iv) Any escalation criteria are met (see escalation rules)
@@ -41,9 +41,13 @@ v) The message is generic acknowledgement to the reminder (e.g., "ok", "okay", "
 
 For non-scheduling cases, set appropriate status and message:
 
-### 1) Questions about visit prep (or) unrelated topics:
+### 1) Questions about visit prep (or) unrelated topics (NOT about Twin Health):
 i) message: "I'm sorry, I'm unable to help with that. I can forward this to a specialist and they'll respond via text within 1 business day."
 ii) status: "escalate"
+
+### 2) General Inquiries about Twin Health:
+i) If the user asks about Twin Health, its mission, technology, or costs, use the "Twin Health Program Overview" below to provide a concise answer.
+ii) status: "classified"
 
 ### 2) Incorrect appointment info reported:
 i) message: "Thank you, I will forward this to a specialist. If they have questions they will respond within 1 business day."
