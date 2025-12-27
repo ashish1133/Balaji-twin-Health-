@@ -24,15 +24,23 @@
 
 1.  **Clone the repository:**
     ```bash
-    git clone <repository-url>
-    cd twin_health_chatbot
+    git clone https://github.com/ashish1133/Balaji-twin-Health-.git
+    cd Balaji-twin-Health-
     ```
 
 2.  **Set up the Virtual Environment:**
     ```bash
-    python -m venv venv
-    source venv/bin/activate  # On Linux/macOS
-    venv\Scripts\activate     # On Windows
+    # Navigate to the project folder
+    cd chatbot_project
+
+    # Create virtual environment
+    python -m venv .venv
+
+    # Activate virtual environment
+    # On Windows:
+    .\.venv\Scripts\activate
+    # On Linux/macOS:
+    source .venv/bin/activate
     ```
 
 3.  **Install Dependencies:**
@@ -41,18 +49,32 @@
     ```
 
 4.  **Configure Environment Variables:**
-    Create a `.env` file in the `chatbot_project` directory and add your secret keys:
-    ```
-    SECRET_KEY='<My_Django_Secret_Key>'
+    Create a file named `.env` inside the `chatbot_project/` directory:
+    ```env
+    SECRET_KEY=your-django-secret-key
     DEBUG=True
-    GEMINI_API_KEY='<My_Gemini_API_Key>'
+    ALLOWED_HOSTS=localhost,127.0.0.1
+
+    # LLM Configuration
+    LLM_PROVIDER=Gemini
+    GEMINI_API_KEY=your-google-gemini-api-key
+    GEMINI_MODEL=gemini-2.5-flash
     ```
 
-5.  **Run Migrations and Server:**
+5.  **Run Migrations and Start Server:**
     ```bash
-    python manage.py makemigrations chat
     python manage.py migrate
     python manage.py runserver
+    ```
+
+6.  **Access the App:**
+    - Chat Interface: [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+    - Admin Panel: [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/)
+
+7.  **Create Admin User (Optional):**
+    To access the admin panel, create a superuser:
+    ```bash
+    python manage.py createsuperuser
     ```
 
 The application will be accessible at `http://127.0.0.1:8000/`.
